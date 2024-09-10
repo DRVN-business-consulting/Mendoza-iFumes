@@ -7,6 +7,7 @@ export default function App() {
 	let [themeColor, setThemeColor] = React.useState('red');
 	let [currentPage, setCurrentPage] = React.useState('list');
 	let [selected, setSelected] = React.useState(null);
+	const photo = 'https://tenor.com/view/disco-bar-line-gif-17788165308737640224';
 	const playList = [
 		{
 			id: '0',
@@ -91,6 +92,11 @@ export default function App() {
 					},
 					(currentPage === 'play' ? styles.show : styles.hide)]}
 				>
+					<Image
+                            source = {{
+                                uri : photo
+                            }}
+                            style = {styles.pokemonThumb}></Image>
 					<Text style={[(isDarkTheme ? styles.titleTextDark : styles.titleText)]}>{selected?.title ? selected.title : ''}</Text>
 					
 					<TouchableOpacity
